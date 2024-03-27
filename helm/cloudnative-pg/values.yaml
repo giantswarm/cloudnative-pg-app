@@ -1,0 +1,7 @@
+name: cloudnative-pg
+
+image:
+  registry: gsoci.azurecr.io
+  name: giantswarm/cloudnative-pg
+  tag: v0.0.1
+  pullPolicy: IfNotPresent

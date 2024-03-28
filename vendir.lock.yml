@@ -1,0 +1,11 @@
+apiVersion: vendir.k14s.io/v1alpha1
+directories:
+- contents:
+  - git:
+      commitTitle: Release cloudnative-pg-v0.20.2 (#214)...
+      sha: 9bf91a9159d4813be7de52be4cfd2e8c2739bc86
+      tags:
+      - cloudnative-pg-v0.20.2
+    path: .
+  path: helm/cloudnative-pg/charts/cloudnative-pg
+kind: LockConfig

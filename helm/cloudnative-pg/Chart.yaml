@@ -5,8 +5,9 @@ description: A Giant Swarm app for deploying CloudNative PostgreSQL.
 home: https://github.com/giantswarm/cloudnative-pg-app
 icon: https://s.giantswarm.io/app-icons/cloudnative-pg/icon-light.svg
 sources:
-- https://github.com/cloudnative-pg/charts
+  - https://github.com/cloudnative-pg/charts
 version: 0.0.0-dev
 annotations:
   application.giantswarm.io/team: "shield"
   config.giantswarm.io/version: 1.x.x
+dependencies: []

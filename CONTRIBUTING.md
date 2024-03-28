@@ -2,7 +2,7 @@
 
 ## Assumptions
 
-This guide uses ['Loki Distributed'](https://github.com/grafana/helm-charts/tree/main/charts/loki-distributed) chart as an example which is one of the charts held in upstream `helm-charts` repo. 
+This guide uses ['Loki Distributed'](https://github.com/grafana/helm-charts/tree/main/charts/loki-distributed) chart as an example which is one of the charts held in upstream `helm-charts` repo.
 
 I want to easily track it, but also be able to submit patches to upstream as well as make some specific changes that
 I never want to go to upstream.
@@ -21,7 +21,7 @@ and "chart repo".
 The three repos we're going to use are:
 
 - Original upstream repo <https://github.com/grafana/helm-charts/tree/main/charts/loki-distributed>.
-  Every time I say "upstream" repo, I mean this one. It is read-only for us and maintaned by external
+  Every time I say "upstream" repo, I mean this one. It is read-only for us and maintained by external
   organization.
 - (Optional, but recommended) Our copy for tracking the "upstream". We will fork the upstream to
   create what we call "upstream copy"
@@ -91,7 +91,7 @@ Clone this repo to your local machine and setup "upstream copy" as remote to tra
 ```
 git clone git@github.com:giantswarm/loki-app.git
 cd loki-app
-git rm -r helm/{APP-NAME} && git commit -am "remove template chart" && git push  # optionally remove the chart template
+git rm -r helm/cloudnative-pg && git commit -am "remove template chart" && git push  # optionally remove the chart template
 git remote add -f --no-tags upstream-copy git@github.com:giantswarm/grafana-helm-charts-upstream.git  # add remote
 ```
 

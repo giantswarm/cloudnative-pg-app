@@ -2,16 +2,19 @@
 
 [Read me after cloning this template (GS staff only)](https://handbook.giantswarm.io/docs/dev-and-releng/app-developer-processes/adding_app_to_appcatalog/)
 
-# {APP-NAME} chart
+# cloudnative-pg chart
 
-Giant Swarm offers a {APP-NAME} App which can be installed in workload clusters.
-Here we define the {APP-NAME} chart with its templates and default configuration.
-
-**What is this app?**
+This repository contains a Giant Swarm App for installing CloudNative PostgreSQL (a.k.a. CloudNative PG or `cnpg`) in a Giant Swarm cluster.
 
 **Why did we add it?**
 
+Several capabilities of the Giant Swarm security platform benefit from using PostgreSQL as a database. CloudNative PostgreSQL is an operator which manages the lifecycle of PostgreSQL databases deployed within Kubernetes cluster. This app packages the `cnpg` operator for use by our platform.
+
 **Who can use it?**
+
+The official CNPG charts are well-maintained and should be preferred over this repository. This chart is slightly opinionated for Giant Swarm's use case and intended for our internal use, but others are welcome to use it if they find it helpful.
+
+Note to Giant Swarm customers: CNPG is used internally in our platform not currently offered as a managed app. You are welcome to use this chart if it suits your needs, but it will not be monitored and support will be on a best-effort basis.
 
 ## Installing
 
@@ -22,33 +25,6 @@ There are several ways to install this app onto a workload cluster.
 - By creating an [App resource](https://docs.giantswarm.io/use-the-api/management-api/crd/apps.application.giantswarm.io/) in the management cluster as explained in [Getting started with App Platform](https://docs.giantswarm.io/getting-started/app-platform/).
 
 ## Configuring
-
-### values.yaml
-
-**This is an example of a values file you could upload using our web interface.**
-
-```yaml
-# values.yaml
-
-```
-
-### Sample App CR and ConfigMap for the management cluster
-
-If you have access to the Kubernetes API on the management cluster, you could create
-the App CR and ConfigMap directly.
-
-Here is an example that would install the app to
-workload cluster `abc12`:
-
-```yaml
-# appCR.yaml
-
-```
-
-```yaml
-# user-values-configmap.yaml
-
-```
 
 See our [full reference on how to configure apps](https://docs.giantswarm.io/getting-started/app-platform/app-configuration/) for more details.
 

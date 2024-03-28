@@ -1,4 +1,5 @@
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/giantswarm/cloudnative-pg-app/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/giantswarm/cloudnative-pg-app/tree/main)
+[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/giantswarm/edgedb-app/badge)](https://securityscorecards.dev/viewer/?uri=github.com/giantswarm/edgedb-app)
 
 # cloudnative-pg chart
 

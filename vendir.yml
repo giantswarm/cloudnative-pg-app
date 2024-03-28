@@ -1,0 +1,14 @@
+apiVersion: vendir.k14s.io/v1alpha1
+kind: Config
+directories:
+- path: helm/cloudnative-pg/charts/cloudnative-pg
+  contents:
+  - path: .
+    git:
+      url: https://github.com/giantswarm/cloudnative-pg-upstream
+      ref: cloudnative-pg-v0.20.2
+    includePaths:
+      - charts/cloudnative-pg/**/*
+    # excludePaths:
+    #   - charts/cloudnative-pg/templates/crds/*
+    newRootPath: charts/cloudnative-pg

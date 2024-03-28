@@ -1,6 +1,4 @@
-[![CircleCI](https://dl.circleci.com/status-badge/img/gh/giantswarm/APP-NAME/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/giantswarm/APP-NAME/tree/main)
-
-[Read me after cloning this template (GS staff only)](https://handbook.giantswarm.io/docs/dev-and-releng/app-developer-processes/adding_app_to_appcatalog/)
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/giantswarm/cloudnative-pg-app/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/giantswarm/cloudnative-pg-app/tree/main)
 
 # cloudnative-pg chart
 
@@ -8,13 +6,13 @@ This repository contains a Giant Swarm App for installing CloudNative PostgreSQL
 
 **Why did we add it?**
 
-Several capabilities of the Giant Swarm security platform benefit from using PostgreSQL as a database. CloudNative PostgreSQL is an operator which manages the lifecycle of PostgreSQL databases deployed within Kubernetes cluster. This app packages the `cnpg` operator for use by our platform.
+Several capabilities of the Giant Swarm security platform benefit from using PostgreSQL as a database. CloudNative PostgreSQL is an operator which manages the lifecycle of PostgreSQL databases deployed within Kubernetes clusters. This app packages the `cnpg` operator for use by our platform.
 
 **Who can use it?**
 
 The official CNPG charts are well-maintained and should be preferred over this repository. This chart is slightly opinionated for Giant Swarm's use case and intended for our internal use, but others are welcome to use it if they find it helpful.
 
-Note to Giant Swarm customers: CNPG is used internally in our platform not currently offered as a managed app. You are welcome to use this chart if it suits your needs, but it will not be monitored and support will be on a best-effort basis.
+Note to Giant Swarm customers: CNPG is used internally in our platform, and not currently offered as a managed app. You are welcome to use this chart if it suits your needs, but it will not be monitored and support will be on a best-effort basis.
 
 ## Installing
 
@@ -28,19 +26,7 @@ There are several ways to install this app onto a workload cluster.
 
 See our [full reference on how to configure apps](https://docs.giantswarm.io/getting-started/app-platform/app-configuration/) for more details.
 
-## Compatibility
-
-This app has been tested to work with the following workload cluster release versions:
-
-- _add release version_
-
-## Limitations
-
-Some apps have restrictions on how they can be deployed.
-Not following these limitations will most likely result in a broken deployment.
-
-- _add limitation_
-
 ## Credit
 
-- {APP HELM REPOSITORY}
+- <https://github.com/cloudnative-pg/charts>
+- <https://github.com/cloudnative-pg/cloudnative-pg>

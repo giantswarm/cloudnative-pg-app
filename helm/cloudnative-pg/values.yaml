@@ -5,3 +5,12 @@ image:
   name: giantswarm/cloudnative-pg
   tag: v0.0.1
   pullPolicy: IfNotPresent
+
+cloudnative-pg:
+  resources:
+    limits:
+      cpu: 100m
+      memory: 200Mi
+    requests:
+      cpu: 100m
+      memory: 100Mi

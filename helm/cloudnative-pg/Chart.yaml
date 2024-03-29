@@ -10,4 +10,6 @@ version: 0.0.0-dev
 annotations:
   application.giantswarm.io/team: "shield"
   config.giantswarm.io/version: 1.x.x
-dependencies: []
+dependencies:
+  - name: cloudnative-pg
+    version: 0.20.2

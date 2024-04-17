@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-- Initial commit.
+## [0.0.1] - 2024-04-17
 
-[Unreleased]: https://github.com/giantswarm/cloudnative-pg-app/tree/main
+- Initial release containing cloudnative-pg v1.22.2 (chart v0.20.2).
+
+[Unreleased]: https://github.com/giantswarm/cloudnative-pg-app/compare/v0.0.1...HEAD
+[0.0.1]: https://github.com/giantswarm/cloudnative-pg-app/releases/tag/v0.0.1

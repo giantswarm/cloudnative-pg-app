@@ -12,4 +12,4 @@ annotations:
   config.giantswarm.io/version: 1.x.x
 dependencies:
   - name: cloudnative-pg
-    version: 0.20.2
+    version: 0.21.2

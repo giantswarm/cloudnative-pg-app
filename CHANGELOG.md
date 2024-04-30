@@ -10,6 +10,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Change app catalog from `giantswarm` to `operations`.
+- Update to cloudnative-pg v1.23.1 (chart v0.21.2).
+- Increase default CPU requests to 250Mi.
 
 ## [0.0.1] - 2024-04-17
 

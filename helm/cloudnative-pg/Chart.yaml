@@ -6,7 +6,7 @@ home: https://github.com/giantswarm/cloudnative-pg-app
 icon: https://s.giantswarm.io/app-icons/cloudnative-pg/icon-light.svg
 sources:
   - https://github.com/cloudnative-pg/charts
-version: 0.0.1
+version: 0.0.2
 annotations:
   application.giantswarm.io/team: "shield"
   config.giantswarm.io/version: 1.x.x

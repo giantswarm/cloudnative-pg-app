@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.2] - 2024-04-30
+
 ### Changed
 
 - Change app catalog from `giantswarm` to `operations`.
@@ -17,5 +19,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Initial release containing cloudnative-pg v1.22.2 (chart v0.20.2).
 
-[Unreleased]: https://github.com/giantswarm/cloudnative-pg-app/compare/v0.0.1...HEAD
+[Unreleased]: https://github.com/giantswarm/cloudnative-pg-app/compare/v0.0.2...HEAD
+[0.0.2]: https://github.com/giantswarm/cloudnative-pg-app/compare/v0.0.1...v0.0.2
 [0.0.1]: https://github.com/giantswarm/cloudnative-pg-app/releases/tag/v0.0.1

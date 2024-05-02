@@ -11,6 +11,12 @@ cloudnative-pg:
     podMonitorEnabled: true
     podMonitorAdditionalLabels:
       application.giantswarm.io/team: shield
+    grafanaDashboard:
+      create: true
+      labels:
+        app.giantswarm.io/kind: "dashboard"
+      annotations:
+        k8s-sidecar-target-directory: "/var/lib/grafana/dashboards/public"
   resources:
     limits:
       cpu: 250m

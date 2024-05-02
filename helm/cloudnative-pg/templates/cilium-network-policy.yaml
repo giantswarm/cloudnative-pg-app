@@ -6,8 +6,6 @@ metadata:
   name: {{ include "cloudnative-pg.fullname" . }}-cnp
   labels:
     {{- include "cloudnative-pg.labels" . | nindent 4 }}
-  # annotations:
-  #   ignore-check.kube-linter.io/dangling-networkpolicy: "The podselector value, app.kubernetes.io/managed-by:trivy-operator is inherited from parent repository."
 spec:
   endpointSelector:
     matchLabels:
@@ -24,6 +22,7 @@ spec:
             - port: "53"
             - port: "1053"
   ingress:
+    # Allow scraping metrics.
     - fromEntities:
       - cluster
       toPorts:

@@ -9,6 +9,13 @@ directories:
       ref: cloudnative-pg-v0.21.2
     includePaths:
       - charts/cloudnative-pg/**/*
-    # excludePaths:
-    #   - charts/cloudnative-pg/templates/crds/*
     newRootPath: charts/cloudnative-pg
+- path: helm/cloudnative-pg/charts/dashboards
+  contents:
+  - path: .
+    git:
+      url: https://github.com/cloudnative-pg/grafana-dashboards
+      ref: cluster-v0.0.2
+    includePaths:
+      - charts/cluster/**/*
+    newRootPath: charts/cluster

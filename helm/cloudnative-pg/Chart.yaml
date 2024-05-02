@@ -13,3 +13,6 @@ annotations:
 dependencies:
   - name: cloudnative-pg
     version: 0.21.2
+  - name: cluster
+    # alias: monitoring
+    version: 0.0.2

@@ -14,13 +14,6 @@ spec:
     # Allow egress to Kubernetes API server.
     - toEntities:
         - kube-apiserver
-    # Allow DNS.
-    - toEntities:
-        - cluster
-      toPorts:
-        - ports:
-            - port: "53"
-            - port: "1053"
   ingress:
     # Allow scraping metrics.
     - fromEntities:

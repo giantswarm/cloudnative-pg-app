@@ -8,4 +8,12 @@ directories:
       - cloudnative-pg-v0.21.2
     path: .
   path: helm/cloudnative-pg/charts/cloudnative-pg
+- contents:
+  - git:
+      commitTitle: 'Merge pull request #6 from cloudnative-pg/release/cluster-v0.0.2...'
+      sha: 507c3a22ebd15a0fe14a6b15b9eb37955404aab6
+      tags:
+      - cluster-v0.0.2
+    path: .
+  path: helm/cloudnative-pg/charts/dashboards
 kind: LockConfig

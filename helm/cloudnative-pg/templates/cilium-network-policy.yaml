@@ -1,0 +1,24 @@
+{{ if .Values.ciliumNetworkPolicy.enabled }}
+apiVersion: "cilium.io/v2"
+kind: CiliumNetworkPolicy
+metadata:
+  namespace: {{ .Release.Namespace }}
+  name: {{ include "cloudnative-pg.fullname" . }}-cnp
+  labels:
+    {{- include "cloudnative-pg.labels" . | nindent 4 }}
+spec:
+  endpointSelector:
+    matchLabels:
+       {{- include "cloudnative-pg.selectorLabels" . | nindent 6 }}
+  egress:
+    # Allow egress to Kubernetes API server.
+    - toEntities:
+        - kube-apiserver
+  ingress:
+    # Allow scraping metrics.
+    - fromEntities:
+      - cluster
+      toPorts:
+      - ports:
+        - port: "8080"
+{{ end }}

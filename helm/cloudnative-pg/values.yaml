@@ -7,6 +7,10 @@ image:
   pullPolicy: IfNotPresent
 
 cloudnative-pg:
+  monitoring:
+    podMonitorEnabled: true
+    podMonitorAdditionalLabels:
+      application.giantswarm.io/team: shield
   resources:
     limits:
       cpu: 250m
@@ -18,3 +22,6 @@ cloudnative-pg:
 vpa:
   enabled: true
   containerPolicies: {}
+
+ciliumNetworkPolicy:
+  enabled: true

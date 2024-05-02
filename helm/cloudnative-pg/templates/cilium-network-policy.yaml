@@ -1,0 +1,32 @@
+{{ if .Values.ciliumNetworkPolicy.enabled }}
+apiVersion: "cilium.io/v2"
+kind: CiliumNetworkPolicy
+metadata:
+  namespace: {{ .Release.Namespace }}
+  name: {{ include "cloudnative-pg.fullname" . }}-cnp
+  labels:
+    {{- include "cloudnative-pg.labels" . | nindent 4 }}
+  # annotations:
+  #   ignore-check.kube-linter.io/dangling-networkpolicy: "The podselector value, app.kubernetes.io/managed-by:trivy-operator is inherited from parent repository."
+spec:
+  endpointSelector:
+    matchLabels:
+       {{- include "cloudnative-pg.selectorLabels" . | nindent 6 }}
+  egress:
+    # Allow egress to Kubernetes API server.
+    - toEntities:
+        - kube-apiserver
+    # Allow DNS.
+    - toEntities:
+        - cluster
+      toPorts:
+        - ports:
+            - port: "53"
+            - port: "1053"
+  ingress:
+    - fromEntities:
+      - cluster
+      toPorts:
+      - ports:
+        - port: "8080"
+{{ end }}

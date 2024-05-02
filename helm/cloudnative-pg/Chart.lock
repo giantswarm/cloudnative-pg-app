@@ -2,5 +2,8 @@ dependencies:
 - name: cloudnative-pg
   repository: ""
   version: 0.21.2
-digest: sha256:96c2a159e618b0eee26690a9e8e7840180d45ba79127e6d4dd7be533332d52f9
-generated: "2024-04-30T20:04:07.775903126Z"
+- name: dashboards
+  repository: ""
+  version: 0.0.2
+digest: sha256:2200b6c2c234bc78f5caccf8bdcf1d56d99221f1db0e0f19a95dc2e0b749f28b
+generated: "2024-05-02T10:14:03.738336561-04:00"

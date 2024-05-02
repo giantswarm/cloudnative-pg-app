@@ -15,6 +15,13 @@ spec:
     - toEntities:
         - kube-apiserver
   ingress:
+    # Allow access to call the webhook. Cilium sees this as "remote-node" instead of apiserver for some reason.
+    - fromEntities:
+      - kube-apiserver
+      - remote-node
+      toPorts:
+      - ports:
+        - port: "9443"
     # Allow scraping metrics.
     - fromEntities:
       - cluster

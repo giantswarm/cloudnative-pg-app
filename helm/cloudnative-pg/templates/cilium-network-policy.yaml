@@ -14,8 +14,17 @@ spec:
     # Allow egress to Kubernetes API server.
     - toEntities:
         - kube-apiserver
+    # Allow egress to status and database endpoints of managed Postgres cluster pods.
+    - toEndpoints:
+      - matchExpressions:
+        - key: "k8s:cnpg.io/cluster"
+          operator: Exists
+      toPorts:
+        - ports:
+            - port: "8000"
+            - port: "5432"
   ingress:
-    # Allow access to call the webhook. Cilium sees this as "remote-node" instead of apiserver for some reason.
+    # Allow access to call the webhook. Cilium sees this as "remote-node" instead of "kube-apiserver" for some reason.
     - fromEntities:
       - kube-apiserver
       - remote-node

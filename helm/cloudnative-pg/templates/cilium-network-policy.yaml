@@ -17,12 +17,16 @@ spec:
     # Allow egress to status and database endpoints of managed Postgres cluster pods.
     - toEndpoints:
       - matchExpressions:
-        - key: "k8s:cnpg.io/cluster"
+        - key: cnpg.io/cluster
+          operator: Exists
+        - key: io.kubernetes.pod.namespace
           operator: Exists
       toPorts:
-        - ports:
-            - port: "8000"
-            - port: "5432"
+      - ports:
+        - port: "8000"
+          protocol: TCP
+        - port: "5432"
+          protocol: TCP
   ingress:
     # Allow access to call the webhook. Cilium sees this as "remote-node" instead of "kube-apiserver" for some reason.
     - fromEntities:

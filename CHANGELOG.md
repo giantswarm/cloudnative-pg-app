@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add CiliumNetworkPolicy.
 - Enable PodMonitor for operator metrics.
 - Enable Grafana dashboard.
+- Enable ClusterImageCatalog for Giant Swarm retagged images.
 
 ## [0.0.2] - 2024-04-30
 

@@ -1,8 +1,7 @@
 apiVersion: postgresql.cnpg.io/v1
-kind: ImageCatalog
+kind: ClusterImageCatalog
 metadata:
   name: gs-postgresql
-  namespace: {{ .Release.Namespace }}
   annotations:
     "helm.sh/hook": "post-install,post-upgrade"
     "helm.sh/hook-delete-policy": "before-hook-creation,hook-succeeded,hook-failed"

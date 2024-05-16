@@ -19,8 +19,8 @@ cloudnative-pg:
         k8s-sidecar-target-directory: "/var/lib/grafana/dashboards/public"
   resources:
     limits:
-      cpu: 300m
-      memory: 350Mi
+      cpu: 250m
+      memory: 300Mi
     requests:
       cpu: 250m
       memory: 300Mi
@@ -29,7 +29,7 @@ vpa:
   enabled: true
   containerPolicies:
     minAllowed:
-      cpu: "250m"
+      cpu: "50m"
 
 ciliumNetworkPolicy:
   enabled: true

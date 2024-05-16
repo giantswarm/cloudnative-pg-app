@@ -1,0 +1,14 @@
+apiVersion: postgresql.cnpg.io/v1
+kind: ImageCatalog
+metadata:
+  name: gs-postgresql
+  namespace: {{ .Release.Namespace }}
+  annotations:
+    "helm.sh/hook": "post-install,post-upgrade"
+    "helm.sh/hook-delete-policy": "before-hook-creation,hook-succeeded,hook-failed"
+  labels:
+    {{- include "cloudnative-pg.labels" . | nindent 4 }}
+spec:
+  images:
+    - major: 16
+      image: quay.io/giantswarm/postgresql-cnpg:16.2

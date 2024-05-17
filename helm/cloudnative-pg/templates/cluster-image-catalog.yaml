@@ -1,0 +1,16 @@
+{{- if .Values.clusterImageCatalog.enabled -}}
+apiVersion: postgresql.cnpg.io/v1
+kind: ClusterImageCatalog
+metadata:
+  name: gs-postgresql
+  annotations:
+    "helm.sh/hook": "post-install,post-upgrade"
+  labels:
+    {{- include "cloudnative-pg.labels" . | nindent 4 }}
+spec:
+  images:
+    {{- range .Values.clusterImageCatalog.images }}
+    - major: {{ .major }}
+      image: {{ $.Values.clusterImageCatalog.registry }}/{{ $.Values.clusterImageCatalog.repository }}:{{ .tag }}
+    {{- end }}
+{{- end -}}

@@ -9,7 +9,7 @@ metadata:
     {{- include "cloudnative-pg.labels" . | nindent 4 }}
 spec:
   images:
-    {{- range .Values.clusterImageCatalog.images -}}
+    {{- range .Values.clusterImageCatalog.images }}
     - major: {{ .major }}
       image: {{ $.Values.clusterImageCatalog.registry }}/{{ $.Values.clusterImageCatalog.repository }}:{{ .tag }}
     {{- end }}

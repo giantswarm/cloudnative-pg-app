@@ -111,12 +111,21 @@ spec:
             - port: "5432"
     - toEndpoints:
         - matchLabels:
+            io.kubernetes.pod.namespace: kube-system
             k8s-app: coredns
-            k8s:io.kubernetes.pod.namespace: kube-system
-        toPorts:
+        - matchLabels:
+            io.kubernetes.pod.namespace: kube-system
+            k8s-app: k8s-dns-node-cache
+      toPorts:
         - ports:
-          - port: "1053"
-            protocol: ANY
+            - port: "1053"
+              protocol: UDP
+            - port: "1053"
+              protocol: TCP
+            - port: "53"
+              protocol: UDP
+            - port: "53"
+              protocol: TCP
     # Allow CNPG management controller to access the API server.
     - toEntities:
       - kube-apiserver

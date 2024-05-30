@@ -47,7 +47,7 @@ spec:
 apiVersion: cilium.io/v2
 kind: CiliumClusterwideNetworkPolicy
 metadata:
-  name: {{ include "cloudnative-pg.fullname" . }}-pg-instance
+  name: {{ include "cloudnative-pg.fullname" . }}-db-instance
 spec:
   endpointSelector:
     matchLabels:
@@ -81,7 +81,7 @@ spec:
 apiVersion: cilium.io/v2
 kind: CiliumClusterwideNetworkPolicy
 metadata:
-  name: {{ include "cloudnative-pg.fullname" . }}-pg-init
+  name: {{ include "cloudnative-pg.fullname" . }}-db-init
 spec:
   endpointSelector:
     matchLabels:
@@ -96,7 +96,7 @@ spec:
 apiVersion: cilium.io/v2
 kind: CiliumClusterwideNetworkPolicy
 metadata:
-  name: {{ include "cloudnative-pg.fullname" . }}-join
+  name: {{ include "cloudnative-pg.fullname" . }}-db-join
 spec:
   endpointSelector:
     matchLabels:

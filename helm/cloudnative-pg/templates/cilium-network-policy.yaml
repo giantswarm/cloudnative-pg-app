@@ -43,6 +43,35 @@ spec:
       - ports:
         - port: "8080"
 ---
+# This policy targets all pods that belong to any CNPG-managed Postgres cluster (instance, init, join).
+apiVersion: cilium.io/v2
+kind: CiliumClusterwideNetworkPolicy
+metadata:
+  name: {{ include "cloudnative-pg.fullname" . }}-db-dns
+spec:
+  endpointSelector:
+    matchExpressions:
+      - key: cnpg.io/cluster
+        operator: Exists
+  egress:
+    - toEndpoints:
+        - matchLabels:
+            io.kubernetes.pod.namespace: kube-system
+            k8s-app: coredns
+        - matchLabels:
+            io.kubernetes.pod.namespace: kube-system
+            k8s-app: k8s-dns-node-cache
+      toPorts:
+        - ports:
+            - port: "1053"
+              protocol: UDP
+            - port: "1053"
+              protocol: TCP
+            - port: "53"
+              protocol: UDP
+            - port: "53"
+              protocol: TCP
+---
 # This policy targets the Postgres database instance pods managed by CNPG.
 apiVersion: cilium.io/v2
 kind: CiliumClusterwideNetworkPolicy

@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Extend CiliumNetworkPolicy to cover CNPG join and init operations.
+
 ## [0.0.3] - 2024-05-17
 
 ### Added

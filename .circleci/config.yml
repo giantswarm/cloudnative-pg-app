@@ -34,7 +34,7 @@ workflows:
           app_name: "cloudnative-pg"
           app_collection_repo: "aws-app-collection"
           requires:
-            - push-cloudnative-pg-app-to-control-plane-catalog
+            - push-cnpg-app-to-control-plane-catalog
           filters:
             branches:
               ignore: /.*/
@@ -47,7 +47,7 @@ workflows:
           app_name: "cloudnative-pg"
           app_collection_repo: "azure-app-collection"
           requires:
-            - push-cloudnative-pg-app-to-control-plane-catalog
+            - push-cnpg-app-to-control-plane-catalog
           filters:
             branches:
               ignore: /.*/

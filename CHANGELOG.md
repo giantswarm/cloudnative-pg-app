@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Push to AWS and Azure app collections.
+
 ### Changed
 
 - Extend CiliumNetworkPolicy to cover CNPG join and init operations.

@@ -27,3 +27,29 @@ workflows:
           filters:
             tags:
               only: /^v.*/
+
+      - architect/push-to-app-collection:
+          name: aws-app-collection
+          context: "architect"
+          app_name: "cloudnative-pg"
+          app_collection_repo: "aws-app-collection"
+          requires:
+            - push-cloudnative-pg-app-to-control-plane-catalog
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /^v.*/
+
+      - architect/push-to-app-collection:
+          name: azure-app-collection
+          context: "architect"
+          app_name: "cloudnative-pg"
+          app_collection_repo: "azure-app-collection"
+          requires:
+            - push-cloudnative-pg-app-to-control-plane-catalog
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /^v.*/

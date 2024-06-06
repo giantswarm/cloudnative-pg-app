@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.5] - 2024-06-06
+
 ### Added
 
 - Package <https://github.com/cloudnative-pg/grafana-dashboards> v0.0.2 with this chart.
@@ -42,7 +44,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Initial release containing cloudnative-pg v1.22.2 (chart v0.20.2).
 
-[Unreleased]: https://github.com/giantswarm/cloudnative-pg-app/compare/v0.0.4...HEAD
+[Unreleased]: https://github.com/giantswarm/cloudnative-pg-app/compare/v0.0.5...HEAD
+[0.0.5]: https://github.com/giantswarm/cloudnative-pg-app/compare/v0.0.4...v0.0.5
 [0.0.4]: https://github.com/giantswarm/cloudnative-pg-app/compare/v0.0.3...v0.0.4
 [0.0.3]: https://github.com/giantswarm/cloudnative-pg-app/compare/v0.0.2...v0.0.3
 [0.0.2]: https://github.com/giantswarm/cloudnative-pg-app/compare/v0.0.1...v0.0.2

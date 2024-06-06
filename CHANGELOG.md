@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Package <https://github.com/cloudnative-pg/grafana-dashboards> v0.0.2 with this chart.
+
 ## [0.0.4] - 2024-06-04
 
 ### Added

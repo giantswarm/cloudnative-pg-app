@@ -13,33 +13,18 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-{{- if .Values.config.create }}
-{{- if not .Values.config.secret }}
 apiVersion: v1
-kind: ConfigMap
+kind: Pod
 metadata:
-  name: {{ .Values.config.name }}
+  name: "{{ include "cloudnative-pg.fullname" . }}-test-connection"
   labels:
     {{- include "cloudnative-pg.labels" . | nindent 4 }}
-  {{- with .Values.commonAnnotations }}
   annotations:
-    {{- toYaml . | nindent 4 }}
-  {{- end }}
-data:
-  {{- toYaml .Values.config.data | nindent 2 }}
-{{- end }}
-{{- else -}}
-apiVersion: v1
-kind: Secret
-type: Opaque
-metadata:
-  name: {{ .Values.config.name }}
-  labels:
-    {{- include "cloudnative-pg.labels" . | nindent 4 }}
-  {{- with .Values.commonAnnotations }}
-  annotations:
-    {{- toYaml . | nindent 4 }}
-  {{- end }}
-stringData:
-  {{- toYaml .Values.config.data | nindent 2 }}
-{{- end }}
+    "helm.sh/hook": test
+spec:
+  containers:
+    - name: wget
+      image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+      command: ['curl']
+      args: ['-ki','https://{{ .Values.service.name }}:{{ .Values.service.port }}']
+  restartPolicy: Never

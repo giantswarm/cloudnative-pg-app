@@ -31,16 +31,12 @@ spec:
       {{- include "cloudnative-pg.selectorLabels" . | nindent 6 }}
   template:
     metadata:
-      annotations:
-        checksum/config: {{ include (print $.Template.BasePath "/config.yaml") . | sha256sum }}
       {{- with .Values.podAnnotations }}
+      annotations:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       labels:
         {{- include "cloudnative-pg.selectorLabels" . | nindent 8 }}
-        {{- with .Values.podLabels }}
-        {{- toYaml . | nindent 8 }}
-        {{- end }}
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
@@ -49,16 +45,13 @@ spec:
       containers:
       - args:
         - controller
-        - --leader-elect
-        {{- if .Values.config.name }}
-        {{- if not .Values.config.secret }}
-        - --config-map-name={{ .Values.config.name }}
-        {{- else }}
-        - --secret-name={{ .Values.config.name }}
-        {{- end }}
+        - --enable-leader-election
+        {{- with .Values.config.name }}
+        - --config-map-name={{ . }}
+        - --secret-name={{ . }}
         {{- end }}
         - --webhook-port={{ .Values.webhook.port }}
-        {{- range .Values.additionalArgs }}
+        {{-  range .Values.additionaArgs }}
         - {{ . }}
         {{- end }}
         command:
@@ -79,9 +72,6 @@ spec:
             path: /readyz
             port: {{ .Values.webhook.port }}
             scheme: HTTPS
-          {{- if .Values.webhook.livenessProbe.initialDelaySeconds }}
-          initialDelaySeconds: {{ .Values.webhook.livenessProbe.initialDelaySeconds }}
-          {{- end }}
         name: manager
         ports:
         - containerPort: 8080
@@ -95,21 +85,16 @@ spec:
             path: /readyz
             port: {{ .Values.webhook.port }}
             scheme: HTTPS
-          {{- if .Values.webhook.readinessProbe.initialDelaySeconds }}
-          initialDelaySeconds: {{ .Values.webhook.readinessProbe.initialDelaySeconds }}
-          {{- end }}
         resources:
           {{- toYaml .Values.resources | nindent 10 }}
         securityContext:
-          {{- toYaml .Values.containerSecurityContext | nindent 10 }}
+          allowPrivilegeEscalation: false
+          readOnlyRootFilesystem: true
         volumeMounts:
         - mountPath: /controller
           name: scratch-data
         - mountPath: /run/secrets/cnpg.io/webhook
           name: webhook-certificates
-      {{- if .Values.priorityClassName }}
-      priorityClassName: {{ .Values.priorityClassName }}
-      {{- end }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       serviceAccountName: {{ include "cloudnative-pg.serviceAccountName" . }}

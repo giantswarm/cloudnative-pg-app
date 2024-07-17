@@ -135,13 +135,13 @@ rules:
   - update
   - watch
 - apiGroups:
-  - ""
+    - ""
   resources:
-  - secrets/status
+    - secrets/status
   verbs:
-  - get
-  - patch
-  - update
+    - get
+    - patch
+    - update
 - apiGroups:
   - ""
   resources:
@@ -172,7 +172,6 @@ rules:
   verbs:
   - get
   - list
-  - patch
   - update
 - apiGroups:
   - admissionregistration.k8s.io
@@ -181,7 +180,6 @@ rules:
   verbs:
   - get
   - list
-  - patch
   - update
 - apiGroups:
   - apiextensions.k8s.io
@@ -192,17 +190,17 @@ rules:
   - list
   - update
 - apiGroups:
-  - apps
+    - apps
   resources:
-  - deployments
+    - deployments
   verbs:
-  - create
-  - delete
-  - get
-  - list
-  - patch
-  - update
-  - watch
+    - create
+    - delete
+    - get
+    - list
+    - patch
+    - update
+    - watch
 - apiGroups:
   - batch
   resources:
@@ -268,14 +266,6 @@ rules:
 - apiGroups:
   - postgresql.cnpg.io
   resources:
-  - clusterimagecatalogs
-  verbs:
-  - get
-  - list
-  - watch
-- apiGroups:
-  - postgresql.cnpg.io
-  resources:
   - clusters
   verbs:
   - create
@@ -296,40 +286,32 @@ rules:
   resources:
   - clusters/status
   verbs:
-  - get
-  - patch
-  - update
-  - watch
+    - get
+    - patch
+    - update
+    - watch
 - apiGroups:
-  - postgresql.cnpg.io
+    - postgresql.cnpg.io
   resources:
-  - imagecatalogs
+    - poolers
   verbs:
-  - get
-  - list
-  - watch
+    - create
+    - delete
+    - get
+    - list
+    - patch
+    - update
+    - watch
 - apiGroups:
-  - postgresql.cnpg.io
+    - postgresql.cnpg.io
   resources:
-  - poolers
+    - poolers/finalizers
   verbs:
-  - create
-  - delete
-  - get
-  - list
-  - patch
-  - update
-  - watch
+    - update
 - apiGroups:
-  - postgresql.cnpg.io
+    - postgresql.cnpg.io
   resources:
-  - poolers/finalizers
-  verbs:
-  - update
-- apiGroups:
-  - postgresql.cnpg.io
-  resources:
-  - poolers/status
+    - poolers/status
   verbs:
   - get
   - patch
@@ -377,16 +359,6 @@ rules:
   - patch
   - update
   - watch
-- apiGroups:
-  - snapshot.storage.k8s.io
-  resources:
-  - volumesnapshots
-  verbs:
-  - create
-  - get
-  - list
-  - patch
-  - watch
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
@@ -406,54 +378,4 @@ subjects:
 - kind: ServiceAccount
   name: {{ include "cloudnative-pg.serviceAccountName" . }}
   namespace: {{ .Release.Namespace }}
----
-apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRole
-metadata:
-  name: {{ include "cloudnative-pg.fullname" . }}-view
-  labels:
-    {{- include "cloudnative-pg.labels" . | nindent 4 }}
-    {{- if .Values.rbac.aggregateClusterRoles }}
-    rbac.authorization.k8s.io/aggregate-to-view: "true"
-    rbac.authorization.k8s.io/aggregate-to-edit: "true"
-    rbac.authorization.k8s.io/aggregate-to-admin: "true"
-    {{- end }}
-rules:
-- apiGroups:
-  - postgresql.cnpg.io
-  resources:
-  - backups
-  - clusters
-  - poolers
-  - scheduledbackups
-  verbs:
-  - get
-  - list
-  - watch
----
-apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRole
-metadata:
-  name: {{ include "cloudnative-pg.fullname" . }}-edit
-  labels:
-    {{- include "cloudnative-pg.labels" . | nindent 4 }}
-    {{- if .Values.rbac.aggregateClusterRoles }}
-    rbac.authorization.k8s.io/aggregate-to-edit: "true"
-    rbac.authorization.k8s.io/aggregate-to-admin: "true"
-    {{- end }}
-rules:
-- apiGroups:
-  - postgresql.cnpg.io
-  resources:
-  - backups
-  - clusters
-  - poolers
-  - scheduledbackups
-  verbs:
-  - create
-  - delete
-  - deletecollection
-  - patch
-  - update
----
 {{- end }}

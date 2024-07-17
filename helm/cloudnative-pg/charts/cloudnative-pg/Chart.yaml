@@ -15,20 +15,18 @@
 #
 apiVersion: v2
 name: cloudnative-pg
-description: CloudNativePG Operator Helm Chart
+description: CloudNativePG Helm Chart
 icon: https://raw.githubusercontent.com/cloudnative-pg/artwork/main/cloudnativepg-logo.svg
 type: application
-version: "0.21.2"
+version: "0.13.1"
 # This is the version number of the application being deployed. This version number should be
 # incremented each time you make changes to the application. Versions are not expected to
 # follow Semantic Versioning, they should reflect the version the application is using.
 # It is recommended to use it with quotes.
-appVersion: "1.23.1"
+appVersion: "1.15.1"
 sources:
   - https://github.com/cloudnative-pg/charts
 keywords:
-  - operator
-  - controller
   - postgresql
   - postgres
   - database
@@ -36,9 +34,3 @@ home: https://cloudnative-pg.io
 maintainers:
   - name: phisco
     email: p.scorsolini@gmail.com
-dependencies:
-  - name: cluster
-    alias: monitoring
-    condition: monitoring.grafanaDashboard.create
-    version: "0.0"
-    repository: https://cloudnative-pg.github.io/grafana-dashboards

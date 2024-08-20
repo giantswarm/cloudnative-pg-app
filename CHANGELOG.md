@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Rotate operator-managed certificates 16 days before their expiration, instead of 7 days.
+
 ## [0.0.5] - 2024-06-06
 
 ### Added

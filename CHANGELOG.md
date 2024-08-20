@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Rotate operator-managed certificates 16 days before their expiration, instead of 7 days.
+- Update to cloudnative-pg v1.23.2 (chart v0.21.5).
 
 ## [0.0.5] - 2024-06-06
 

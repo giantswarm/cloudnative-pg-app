@@ -7,6 +7,10 @@ image:
   pullPolicy: IfNotPresent
 
 cloudnative-pg:
+  config:
+    data:
+      # Rotate certificates managed by the CNPG operator this many days before their expiration.
+      EXPIRING_CHECK_THRESHOLD: "16"
   image:
     repository: gsoci.azurecr.io/giantswarm/cloudnative-pg
   monitoring:

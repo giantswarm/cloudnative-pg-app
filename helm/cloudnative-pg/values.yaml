@@ -34,7 +34,7 @@ clusterImageCatalog:
   # ! Modifying the image tag will cause any existing PostgreSQL clusters using that major version to be rolled.
   images:
     - major: 16
-      tag: 16.2
+      tag: 16.3
 
 vpa:
   enabled: true

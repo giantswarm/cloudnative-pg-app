@@ -22,7 +22,7 @@ cloudnative-pg:
       labels:
         app.giantswarm.io/kind: "dashboard"
       annotations:
-        k8s-sidecar-target-directory: "/var/lib/grafana/dashboards/public"
+        observability.giantswarm.io/organization: "Shared Org"
   resources:
     limits:
       cpu: 250m

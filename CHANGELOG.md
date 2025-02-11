@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- grafana dashboard: load it to `Shared Org` (public) organization
+
 ## [0.0.6] - 2024-08-20
 
 ### Changed

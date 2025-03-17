@@ -20,6 +20,7 @@ workflows:
             ignore:
             - main
             - master
+
     - architect/push-to-app-catalog:
         context: architect
         executor: app-build-suite
@@ -36,11 +37,77 @@ workflows:
             ignore:
             - main
             - master
+
     - architect/push-to-app-collection:
         name: aws-app-collection
         context: architect
         app_name: cloudnative-pg
         app_collection_repo: aws-app-collection
+        requires:
+        - push-cnpg-app-to-control-plane-catalog
+        filters:
+          branches:
+            ignore: /.*/
+          tags:
+            only: /^v.*/
+
+    - architect/push-to-app-collection:
+        name: capa-app-collection
+        context: architect
+        app_name: cloudnative-pg
+        app_collection_repo: capa-app-collection
+        requires:
+        - push-cnpg-app-to-control-plane-catalog
+        filters:
+          branches:
+            ignore: /.*/
+          tags:
+            only: /^v.*/
+
+    - architect/push-to-app-collection:
+        name: capz-app-collection
+        context: architect
+        app_name: cloudnative-pg
+        app_collection_repo: capz-app-collection
+        requires:
+        - push-cnpg-app-to-control-plane-catalog
+        filters:
+          branches:
+            ignore: /.*/
+          tags:
+            only: /^v.*/
+
+    - architect/push-to-app-collection:
+        name: vsphere-app-collection
+        context: architect
+        app_name: cloudnative-pg
+        app_collection_repo: vsphere-app-collection
+        requires:
+        - push-cnpg-app-to-control-plane-catalog
+        filters:
+          branches:
+            ignore: /.*/
+          tags:
+            only: /^v.*/
+
+    - architect/push-to-app-collection:
+        name: cloud-director-app-collection
+        context: architect
+        app_name: cloudnative-pg
+        app_collection_repo: cloud-director-app-collection
+        requires:
+        - push-cnpg-app-to-control-plane-catalog
+        filters:
+          branches:
+            ignore: /.*/
+          tags:
+            only: /^v.*/
+
+    - architect/push-to-app-collection:
+        name: promox-app-collection
+        context: architect
+        app_name: cloudnative-pg
+        app_collection_repo: promox-app-collection
         requires:
         - push-cnpg-app-to-control-plane-catalog
         filters:

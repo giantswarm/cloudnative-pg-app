@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Push to CAPI app collections.
+
 ### Changed
 
 - grafana dashboard: load it to `Shared Org` (public) organization

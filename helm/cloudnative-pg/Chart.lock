@@ -1,6 +1,6 @@
 dependencies:
 - name: cloudnative-pg
   repository: ""
-  version: 0.21.5
-digest: sha256:f91a919ef0b142b80924098f36ff1179b26aed0f3a6e61c0f8408e3b57eb7f74
-generated: "2024-07-17T13:31:43.434605714Z"
+  version: 0.23.2
+digest: sha256:3d5fb654c29d037e3391ebdff64e6b37120e04078559652e0f04c2caacb3394c
+generated: "2025-05-05T09:18:34.361349135Z"

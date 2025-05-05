@@ -1,0 +1,3 @@
+---
+chart-repos:
+- cnpg-grafana=https://cloudnative-pg.github.io/grafana-dashboards

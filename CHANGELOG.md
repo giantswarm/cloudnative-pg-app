@@ -7,9 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.0.7] - 2025-03-20
+### Changed
 
-## [0.0.7] - 2025-03-17
+- Update to cloudnative-pg v1.25.1 (chart v0.23.2).
+- Update <https://github.com/cloudnative-pg/grafana-dashboards> from v0.0.2 to v0.0.4.
+
+## [0.0.7] - 2025-03-20
 
 ### Added
 

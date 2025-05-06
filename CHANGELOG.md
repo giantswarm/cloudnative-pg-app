@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.8] - 2025-05-05
+
 ### Changed
 
 - Update to cloudnative-pg v1.25.1 (chart v0.23.2).
@@ -66,7 +68,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Initial release containing cloudnative-pg v1.22.2 (chart v0.20.2).
 
-[Unreleased]: https://github.com/giantswarm/cloudnative-pg-app/compare/v0.0.7...HEAD
+[Unreleased]: https://github.com/giantswarm/cloudnative-pg-app/compare/v0.0.8...HEAD
+[0.0.8]: https://github.com/giantswarm/cloudnative-pg-app/compare/v0.0.7...v0.0.8
 [0.0.7]: https://github.com/giantswarm/cloudnative-pg-app/compare/v0.0.7...v0.0.7
 [0.0.7]: https://github.com/giantswarm/cloudnative-pg-app/compare/v0.0.6...v0.0.7
 [0.0.6]: https://github.com/giantswarm/cloudnative-pg-app/compare/v0.0.5...v0.0.6

@@ -33,24 +33,10 @@ workflows:
         filters:
           tags:
             only: /^v.*/
-
           branches:
             ignore:
             - main
             - master
-
-    - architect/push-to-app-collection:
-        name: aws-app-collection
-        context: architect
-        app_name: cloudnative-pg
-        app_collection_repo: aws-app-collection
-        requires:
-        - push-cnpg-app-to-control-plane-catalog
-        filters:
-          branches:
-            ignore: /.*/
-          tags:
-            only: /^v.*/
 
     - architect/push-to-app-collection:
         name: capa-app-collection

@@ -31,11 +31,11 @@ webhooks:
   clientConfig:
     service:
       name: {{ .Values.service.name }}
-      namespace: {{ include "cloudnative-pg.namespace" . }}
+      namespace: {{ .Release.Namespace }}
       path: /mutate-postgresql-cnpg-io-v1-backup
       port: {{ .Values.service.port }}
-  failurePolicy: {{ .Values.webhook.mutating.failurePolicy }}
-  name: mbackup.cnpg.io
+  failurePolicy: {{ .Values.webhook.validating.failurePolicy }}
+  name: mbackup.kb.io
   rules:
   - apiGroups:
     - postgresql.cnpg.io
@@ -52,11 +52,11 @@ webhooks:
   clientConfig:
     service:
       name: {{ .Values.service.name }}
-      namespace: {{ include "cloudnative-pg.namespace" . }}
+      namespace: {{ .Release.Namespace }}
       path: /mutate-postgresql-cnpg-io-v1-cluster
       port: {{ .Values.service.port }}
-  failurePolicy: {{ .Values.webhook.mutating.failurePolicy }}
-  name: mcluster.cnpg.io
+  failurePolicy: {{ .Values.webhook.validating.failurePolicy }}
+  name: mcluster.kb.io
   rules:
   - apiGroups:
     - postgresql.cnpg.io
@@ -73,11 +73,11 @@ webhooks:
   clientConfig:
     service:
       name: {{ .Values.service.name }}
-      namespace: {{ include "cloudnative-pg.namespace" . }}
+      namespace: {{ .Release.Namespace }}
       path: /mutate-postgresql-cnpg-io-v1-scheduledbackup
       port: {{ .Values.service.port }}
-  failurePolicy: {{ .Values.webhook.mutating.failurePolicy }}
-  name: mscheduledbackup.cnpg.io
+  failurePolicy: {{ .Values.webhook.validating.failurePolicy }}
+  name: mscheduledbackup.kb.io
   rules:
   - apiGroups:
     - postgresql.cnpg.io

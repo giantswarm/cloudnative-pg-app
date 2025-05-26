@@ -6,7 +6,7 @@ directories:
   - path: .
     git:
       url: https://github.com/giantswarm/cloudnative-pg-upstream
-      ref: cloudnative-pg-v0.23.2
+      ref: cloudnative-pg-v0.24.0
     includePaths:
       - charts/cloudnative-pg/**/*
     newRootPath: charts/cloudnative-pg

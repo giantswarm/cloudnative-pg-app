@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Update to cloudnative-pg v1.26.0 (chart v0.24.0).
+  - This version allows users to upgrade major versions of postgresql clusters.
+  - This version is now using CNPG-I for extensions (like barman for backups).
+
 ## [0.0.8] - 2025-05-05
 
 ### Changed

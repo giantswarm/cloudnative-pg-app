@@ -22,7 +22,7 @@ cloudnative-pg:
       labels:
         app.giantswarm.io/kind: "dashboard"
       annotations:
-        observability.giantswarm.io/organization: "Shared Org"
+        observability.giantswarm.io/organization: "Giant Swarm"
   resources:
     limits:
       cpu: 250m

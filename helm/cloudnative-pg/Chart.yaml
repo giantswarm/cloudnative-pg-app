@@ -13,6 +13,3 @@ annotations:
 dependencies:
   - name: cloudnative-pg
     version: 0.24.0
-  - name: cluster
-    version: 0.0.5
-    repository: "https://cloudnative-pg.github.io/grafana-dashboards"

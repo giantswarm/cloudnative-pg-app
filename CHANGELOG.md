@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Move dependency `grafana-dashboards` from root chart to upstream.
+- Change dashboard organization from `Shared Org` to `Giant Swarm`.
+
 ## [0.0.9] - 2025-05-28
 
 ### Changed

@@ -15,7 +15,6 @@ spec:
     # Allow egress to Kubernetes API server.
     - toEntities:
         - kube-apiserver
-        - cluster
     - toEndpoints:
       - matchLabels:
           app.kubernetes.io/instance: plugin-barman-cloud

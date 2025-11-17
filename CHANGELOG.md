@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Update main cilium network policy to allow egress to cluster and plugin-barman-cloud.
+
 ## [0.0.10] - 2025-06-24
 
 ### Changed

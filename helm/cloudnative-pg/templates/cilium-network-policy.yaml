@@ -15,6 +15,14 @@ spec:
     # Allow egress to Kubernetes API server.
     - toEntities:
         - kube-apiserver
+    - toEndpoints:
+      - matchLabels:
+          app.kubernetes.io/instance: plugin-barman-cloud
+          app.kubernetes.io/name: pluginbarmancloud
+      toPorts:
+      - ports:
+        - port: "9090"
+          protocol: TCP
     # Allow egress to status and database endpoints of managed Postgres cluster pods.
     - toEndpoints:
       - matchExpressions:

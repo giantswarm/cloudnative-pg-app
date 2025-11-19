@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- Fix plugin-barman-cloud name label in cilium network policy.
+
 ## [0.0.11] - 2025-11-19
 
 ### Changed

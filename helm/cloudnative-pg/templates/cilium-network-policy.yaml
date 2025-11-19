@@ -18,7 +18,7 @@ spec:
     - toEndpoints:
       - matchLabels:
           app.kubernetes.io/instance: plugin-barman-cloud
-          app.kubernetes.io/name: pluginbarmancloud
+          app.kubernetes.io/name: plugin-barman-cloud
       toPorts:
       - ports:
         - port: "9090"

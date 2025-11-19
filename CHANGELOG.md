@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.12] - 2025-11-19
+
 ### Fixed
 
 - Fix plugin-barman-cloud name label in cilium network policy.
@@ -93,7 +95,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Initial release containing cloudnative-pg v1.22.2 (chart v0.20.2).
 
-[Unreleased]: https://github.com/giantswarm/cloudnative-pg-app/compare/v0.0.11...HEAD
+[Unreleased]: https://github.com/giantswarm/cloudnative-pg-app/compare/v0.0.12...HEAD
+[0.0.12]: https://github.com/giantswarm/cloudnative-pg-app/compare/v0.0.11...v0.0.12
 [0.0.11]: https://github.com/giantswarm/cloudnative-pg-app/compare/v0.0.10...v0.0.11
 [0.0.10]: https://github.com/giantswarm/cloudnative-pg-app/compare/v0.0.9...v0.0.10
 [0.0.9]: https://github.com/giantswarm/cloudnative-pg-app/compare/v0.0.8...v0.0.9

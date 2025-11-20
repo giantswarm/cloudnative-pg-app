@@ -1,3 +1,5 @@
 ---
 chart-repos:
+- cnpg=https://cloudnative-pg.github.io/charts
 - cnpg-grafana=https://cloudnative-pg.github.io/grafana-dashboards
+

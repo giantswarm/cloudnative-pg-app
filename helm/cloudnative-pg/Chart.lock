@@ -1,9 +1,6 @@
 dependencies:
 - name: cloudnative-pg
-  repository: ""
+  repository: https://cloudnative-pg.github.io/charts
   version: 0.24.0
-- name: cluster
-  repository: https://cloudnative-pg.github.io/grafana-dashboards
-  version: 0.0.5
-digest: sha256:1b00f67843978f2168db86db1e978a09b9e83fca1bd5e07b77e4098a9748f26e
-generated: "2025-06-20T04:12:25.466539941Z"
+digest: sha256:b4013357befdd7a4b84b3db95fe17e7c629b38104578b98bb0a3a72e3a5ffe77
+generated: "2025-11-20T11:57:21.305838068+01:00"

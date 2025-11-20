@@ -1,11 +1,3 @@
-name: cloudnative-pg
-
-image:
-  registry: &registry gsoci.azurecr.io
-  name: giantswarm/cloudnative-pg
-  tag: v0.0.1
-  pullPolicy: IfNotPresent
-
 cloudnative-pg:
   config:
     data:
@@ -33,7 +25,7 @@ cloudnative-pg:
 
 clusterImageCatalog:
   enabled: true
-  registry: *registry
+  registry: gsoci.azurecr.io
   repository: giantswarm/postgresql-cnpg
   # ! Modifying the image tag will cause any existing PostgreSQL clusters using that major version to be rolled.
   images:

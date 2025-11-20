@@ -1,5 +1,5 @@
 apiVersion: v2
-appVersion: 1.23.2
+appVersion: 1.27.1
 name: cloudnative-pg
 description: A Giant Swarm app for deploying CloudNative PostgreSQL.
 home: https://github.com/giantswarm/cloudnative-pg-app

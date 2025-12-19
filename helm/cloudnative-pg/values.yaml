@@ -1,7 +1,7 @@
 cloudnative-pg:
   additionalEnv:
     - name: WATCH_NAMESPACE
-      value: "giantswarm,kyverno,monitoring,policy-system"
+      value: "kyverno,policy-system"
   config:
     data:
       # Rotate certificates managed by the CNPG operator this many days before their expiration.

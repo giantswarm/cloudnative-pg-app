@@ -7,9 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Add `io.giantswarm.application.audience` and `io.giantswarm.application.managed` chart annotations for Backstage visibility.
+
 ### Changed
 
 - Limit the namespaces watched by the operator to those where we currently expect Giant Swarm postgresql clusters.
+- Migrate chart metadata annotations to OCI-compatible format.
 
 ## [0.0.13] - 2025-11-20
 

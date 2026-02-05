@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Limit the namespaces watched by the operator to those where we currently expect Giant Swarm postgresql clusters.
+- Migrate chart metadata annotations to OCI-compatible format.
 
 ## [0.0.13] - 2025-11-20
 

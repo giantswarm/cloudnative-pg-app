@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Push to the `default` catalog.
+
 ### Changed
 
 - Limit the namespaces watched by the operator to those where we currently expect Giant Swarm postgresql clusters.

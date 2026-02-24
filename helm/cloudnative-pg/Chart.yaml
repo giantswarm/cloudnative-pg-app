@@ -8,7 +8,7 @@ sources:
   - https://github.com/cloudnative-pg/charts
 version: 0.0.13
 annotations:
-  io.giantswarm.application.audience: all
+  io.giantswarm.application.audience: giantswarm
   io.giantswarm.application.managed: "true"
   io.giantswarm.application.team: "shield"
 dependencies:

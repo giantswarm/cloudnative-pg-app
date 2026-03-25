@@ -5,7 +5,8 @@ directories:
   contents:
   - path: .
     git:
-      url: https://github.com/giantswarm/cloudnative-pg-upstream
+      url: https://github.com/cloudnative-pg/charts
+      # renovate: datasource=github-tags depName=cloudnative-pg/charts
       ref: cloudnative-pg-v0.24.0
     includePaths:
       - charts/cloudnative-pg/**/*

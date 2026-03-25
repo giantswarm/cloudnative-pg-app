@@ -10,7 +10,7 @@
       "customType": "regex",
       "fileMatch": ["(^|/)vendir\\.yml$"],
       "matchStrings": ["# renovate: datasource=(?<datasource>[^\\s]+) depName=(?<depName>[^\\n]+)\\n\\s+ref: (?<currentValue>[^\\n]+)"],
-      "versioningTemplate": "semver"
+      "versioningTemplate": "regex:^cloudnative-pg-v(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)$"
     }
   ],
   "ignorePaths": ["helm/*/charts/**"],

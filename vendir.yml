@@ -7,7 +7,7 @@ directories:
     git:
       url: https://github.com/cloudnative-pg/charts
       # renovate: datasource=github-tags depName=cloudnative-pg/charts
-      ref: cloudnative-pg-v0.24.0
+      ref: cloudnative-pg-v0.28.0
     includePaths:
       - charts/cloudnative-pg/**/*
     newRootPath: charts/cloudnative-pg

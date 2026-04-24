@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Limit the namespaces watched by the operator to those where we currently expect Giant Swarm postgresql clusters.
 - Migrate chart metadata annotations to OCI-compatible format.
+- Updated `cloudnative-pg` to upstream version `v"1.29.0"`.
 
 ## [0.0.13] - 2025-11-20
 
@@ -111,8 +112,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Increase default CPU requests to 250Mi.
 
 ## [0.0.1] - 2024-04-17
-
-- Initial release containing cloudnative-pg v1.22.2 (chart v0.20.2).
 
 [Unreleased]: https://github.com/giantswarm/cloudnative-pg-app/compare/v0.0.13...HEAD
 [0.0.13]: https://github.com/giantswarm/cloudnative-pg-app/compare/v0.0.12...v0.0.13

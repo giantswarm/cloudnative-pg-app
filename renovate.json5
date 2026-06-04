@@ -5,5 +5,25 @@
     "github>giantswarm/renovate-presets:disable-vendir.json5",
     "github>giantswarm/renovate-presets:disable-upstream-charts.json5"
   ],
-  "automerge": true
+  "automerge": true,
+  "customManagers": [
+    {
+      "customType": "regex",
+      "managerFilePatterns": ["helm/cloudnative-pg/values\\.yaml"],
+      "matchStrings": [
+        "- major: \\d+\\n\\s+tag: \"(?<currentValue>[^\"]+)\""
+      ],
+      "datasourceTemplate": "docker",
+      "depNameTemplate": "gsoci.azurecr.io/giantswarm/postgresql-cnpg",
+      "versioningTemplate": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)$"
+    }
+  ],
+  "packageRules": [
+    {
+      "matchFileNames": ["helm/cloudnative-pg/values.yaml"],
+      "matchPackageNames": ["gsoci.azurecr.io/giantswarm/postgresql-cnpg"],
+      "automerge": false,
+      "groupName": "postgresql-cnpg catalog images"
+    }
+  ]
 }

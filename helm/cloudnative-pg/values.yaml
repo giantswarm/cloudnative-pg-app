@@ -32,8 +32,14 @@ clusterImageCatalog:
   repository: giantswarm/postgresql-cnpg
   # ! Modifying the image tag will cause any existing PostgreSQL clusters using that major version to be rolled.
   images:
+    - major: 15
+      tag: "15.18"
     - major: 16
-      tag: 16.3
+      tag: "16.14"
+    - major: 17
+      tag: "17.10"
+    - major: 18
+      tag: "18.4"
 
 vpa:
   enabled: true

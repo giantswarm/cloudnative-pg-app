@@ -9,17 +9,21 @@
   "customManagers": [
     {
       "customType": "regex",
-      "managerFilePatterns": ["(^|/)vendir\\.yml$"],
-      "matchStrings": ["# renovate: datasource=(?<datasource>[^\\s]+) depName=(?<depName>[^\\n]+)\\n\\s+ref: (?<currentValue>[^\\n]+)"],
-      "versioningTemplate": "regex:^cloudnative-pg-v(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)$"
+      "managerFilePatterns": ["helm/cloudnative-pg/values\\.yaml"],
+      "matchStrings": [
+        "- major: \\d+\\n\\s+tag: \"(?<currentValue>[^\"]+)\""
+      ],
+      "datasourceTemplate": "docker",
+      "depNameTemplate": "gsoci.azurecr.io/giantswarm/postgresql-cnpg",
+      "versioningTemplate": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)$"
     }
   ],
   "packageRules": [
     {
-      "matchFileNames": ["vendir.yml"],
-      "branchPrefix": "renovate/vendir/",
-      "prCreation": "approval",
-      "groupName": "cloudnative-pg-upstream"
+      "matchFileNames": ["helm/cloudnative-pg/values.yaml"],
+      "matchPackageNames": ["gsoci.azurecr.io/giantswarm/postgresql-cnpg"],
+      "automerge": false,
+      "groupName": "postgresql-cnpg catalog images"
     }
   ]
 }

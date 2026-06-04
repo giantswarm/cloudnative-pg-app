@@ -128,7 +128,7 @@
                                 "type": "integer"
                             },
                             "tag": {
-                                "type": "number"
+                                "type": "string"
                             }
                         },
                         "type": "object"

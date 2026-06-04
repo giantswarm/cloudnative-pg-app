@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Update cloudnative-pg to v1.29.1 (upstream chart v0.28.2).
 - Limit the namespaces watched by the operator to those where we currently expect Giant Swarm postgresql clusters.
 - Migrate chart metadata annotations to OCI-compatible format.
 - Updated `cloudnative-pg` to upstream version `v"1.29.0"`.

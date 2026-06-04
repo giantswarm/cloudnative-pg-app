@@ -24,6 +24,12 @@
       "matchPackageNames": ["gsoci.azurecr.io/giantswarm/postgresql-cnpg"],
       "automerge": false,
       "groupName": "postgresql-cnpg catalog images"
+    },
+    {
+      "matchFileNames": ["helm/cloudnative-pg/values.yaml"],
+      "matchPackageNames": ["gsoci.azurecr.io/giantswarm/postgresql-cnpg"],
+      "matchUpdateTypes": ["major"],
+      "enabled": false
     }
   ]
 }

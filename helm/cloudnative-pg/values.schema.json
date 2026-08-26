@@ -1,10 +1,22 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "type": "object",
-    "additionalProperties": true,
+    "additionalProperties": false,
     "properties": {
+        "baseDomain": {
+            "type": "string"
+        },
+        "bootstrapMode": {
+            "type": "object",
+            "additionalProperties": true
+        },
+        "chartOperator": {
+            "type": "object",
+            "additionalProperties": true
+        },
         "ciliumNetworkPolicy": {
             "type": "object",
+            "additionalProperties": true,
             "properties": {
                 "enabled": {
                     "type": "boolean"
@@ -13,113 +25,27 @@
         },
         "cloudnative-pg": {
             "type": "object",
-            "properties": {
-                "additionalEnv": {
-                    "type": "array",
-                    "items": {
-                        "type": "object",
-                        "properties": {
-                            "name": {
-                                "type": "string"
-                            },
-                            "value": {
-                                "type": "string"
-                            }
-                        }
-                    }
-                },
-                "config": {
-                    "type": "object",
-                    "properties": {
-                        "data": {
-                            "type": "object",
-                            "properties": {
-                                "EXPIRING_CHECK_THRESHOLD": {
-                                    "type": "string"
-                                }
-                            }
-                        }
-                    }
-                },
-                "image": {
-                    "type": "object",
-                    "properties": {
-                        "repository": {
-                            "type": "string"
-                        }
-                    }
-                },
-                "monitoring": {
-                    "type": "object",
-                    "properties": {
-                        "grafanaDashboard": {
-                            "type": "object",
-                            "properties": {
-                                "annotations": {
-                                    "type": "object",
-                                    "properties": {
-                                        "observability.giantswarm.io/organization": {
-                                            "type": "string"
-                                        }
-                                    }
-                                },
-                                "create": {
-                                    "type": "boolean"
-                                },
-                                "labels": {
-                                    "type": "object",
-                                    "properties": {
-                                        "app.giantswarm.io/kind": {
-                                            "type": "string"
-                                        }
-                                    }
-                                }
-                            }
-                        },
-                        "podMonitorAdditionalLabels": {
-                            "type": "object",
-                            "properties": {
-                                "application.giantswarm.io/team": {
-                                    "type": "string"
-                                }
-                            }
-                        },
-                        "podMonitorEnabled": {
-                            "type": "boolean"
-                        }
-                    }
-                },
-                "resources": {
-                    "type": "object",
-                    "properties": {
-                        "limits": {
-                            "type": "object",
-                            "properties": {
-                                "cpu": {
-                                    "type": "string"
-                                },
-                                "memory": {
-                                    "type": "string"
-                                }
-                            }
-                        },
-                        "requests": {
-                            "type": "object",
-                            "properties": {
-                                "cpu": {
-                                    "type": "string"
-                                },
-                                "memory": {
-                                    "type": "string"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+            "additionalProperties": true
+        },
+        "cluster": {
+            "type": "object",
+            "additionalProperties": true
+        },
+        "clusterCA": {
+            "type": "string"
+        },
+        "clusterCIDR": {
+            "type": "string"
+        },
+        "clusterDNSIP": {
+            "type": "string"
+        },
+        "clusterID": {
+            "type": "string"
         },
         "clusterImageCatalog": {
             "type": "object",
+            "additionalProperties": false,
             "properties": {
                 "enabled": {
                     "type": "boolean"
@@ -128,6 +54,7 @@
                     "type": "array",
                     "items": {
                         "type": "object",
+                        "additionalProperties": false,
                         "properties": {
                             "major": {
                                 "type": "integer"
@@ -146,14 +73,34 @@
                 }
             }
         },
+        "gcpProject": {
+            "type": "string"
+        },
+        "global": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "description": "Global values shared between all subcharts",
+            "$comment": "Added automatically by 'helm schema' to allow this chart to be used as a Helm dependency, as the `additionalProperties` setting would otherwise collide with Helm's special 'global' values key."
+        },
+        "provider": {
+            "type": "string"
+        },
+        "subscriptionID": {
+            "type": "string"
+        },
         "vpa": {
             "type": "object",
+            "additionalProperties": false,
             "properties": {
                 "containerPolicies": {
                     "type": "object",
+                    "additionalProperties": false,
                     "properties": {
                         "minAllowed": {
                             "type": "object",
+                            "additionalProperties": false,
                             "properties": {
                                 "cpu": {
                                     "type": "string"

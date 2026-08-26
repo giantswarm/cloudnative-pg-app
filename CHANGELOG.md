@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Fix ABS config to not override AppVersion in Chart.yaml
+- Allow additional properties for vendored upstream chart values so upstream keys are not rejected by the generated schema.
 
 ## [0.1.0] - 2026-06-04
 

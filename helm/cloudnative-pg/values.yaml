@@ -1,4 +1,4 @@
-cloudnative-pg:
+cloudnative-pg:  # @schema skipProperties: true; additionalProperties: true
   additionalEnv:
     - name: WATCH_NAMESPACE
       value: "kyverno,policy-system"

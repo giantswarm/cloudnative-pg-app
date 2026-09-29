@@ -17,7 +17,7 @@ cloudnative-pg:  # @schema skipProperties: true; additionalProperties: true
       labels:
         app.giantswarm.io/kind: "dashboard"
       annotations:
-        observability.giantswarm.io/organization: "Giant Swarm"
+        observability.giantswarm.io/organization: "Shared Org"
   resources:
     limits:
       cpu: 250m
